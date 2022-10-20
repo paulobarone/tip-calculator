@@ -1,0 +1,103 @@
+body, ::placeholder, textarea, input {
+  font-family: var(--first-font);
+}
+
+body {
+  background: var(--light-grayish-cyan);
+  display: flex;
+  padding-top: 50px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator__container {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 30px;
+}
+
+.input-label {
+  display: block;
+  color: var(--grayish-cyan);
+  margin-bottom: 8px;
+}
+
+.input {
+  background: var(--light-grayish-cyan);
+  font-size: 24px;
+  padding: 10px;
+  padding-left: 36px;
+  text-align: right;
+  width: 90%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: var(--very-dark-cyan);
+}
+
+.input:focus {
+  outline: 2px solid var(--strong-cyan);
+}
+
+.input-container {
+  width: 100%;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.input-image {
+  position: absolute;
+  top: 39px;
+  left: 15px;
+}
+
+.logo {
+  margin-bottom: 40px;
+}
+
+.percent-input__label {
+  font-size: 24px;
+}
+
+.percent-input {
+  display: none;
+}
+
+.percent-input-container {
+  background-color: var(--very-dark-cyan);
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--white);
+  text-align: center;
+  font-size: 24px;
+}
+
+.percent-input-container:hover {
+  cursor: pointer;
+}
+
+.percent-input-custom {
+  background: var(--light-grayish-cyan);
+  font-size: 24px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding: 10px;
+  text-align: right;
+  width: calc(100% - 20px);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: var(--very-dark-cyan);
+}
+
+.percent-input-container:last-child {
+  background: none;
+  padding: none;
+}
+
+.percent-input-list__container {
+  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
