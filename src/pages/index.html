@@ -1,44 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip calculator app</title>
+  <link rel="stylesheet" href="../../public/styles/reset.css">
+  <link rel="stylesheet" href="../../public/styles/global.css">
 </head>
 <body>
+  <img src="../../public/img/logo.svg" alt="Logotipo Splitter" class="logo">
+  <div class="calculator__container">
+    <div class="calculator-info">
+      <div class="input-container">
+        <label for="bill" class="input-label">Bill</label>
+        <input type="number" id="bill" placeholder="0" class="input">
+      </div>
+      <div class="input-container">
+        <label for="#" class="input-label">Select Tip %</label>
 
-  Bill
+        <input type="radio" name="percent" id="5" class="percent-input">
+        <label for="5" class="percent-input__container">5%</label>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+        <input type="radio" name="percent" id="10" class="percent-input">
+        <label for="10" class="percent-input__container">10%</label>
+        
+        <input type="radio" name="percent" id="15" class="percent-input">
+        <label for="15" class="percent-input__container">15%</label>
 
-  Number of People
+        <input type="radio" name="percent" id="25" class="percent-input">
+        <label for="25" class="percent-input__container">25%</label>
 
-  Tip Amount
-  / person
+        <input type="radio" name="percent" id="50" class="percent-input">
+        <label for="50" class="percent-input__container">50%</label>
 
-  Total
-  / person
+        <input type="number" id="custom" class="input">
+      </div>
+      <div class="input-container">
+        <label class="input-label" for="people-number">Number of People</label>
+        <input type="number" id="people-number" placeholder="0" class="input">
+      </div>
+    </div>
 
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    <div class="result-container">
+      <div class="tip-amount">
+        <div class="tip-amount-text">
+          <span class="tip-amount_title">Tip Amount</span>
+          <span class="tip-amount_subtitle">/ person</span>
+        </div>
+        <span class="tip-amount_value">$0</span>
+      </div>
+      <div class="total">
+        <span class="total_title">Total</span>
+        <span class="total_subtitle">/ person</span>
+      </div>
+      <span class="total_value">$0</span>
+      <button class="btn">Reset</button>
+    </div>
   </div>
 </body>
 </html>
