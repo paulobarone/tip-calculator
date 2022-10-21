@@ -1,0 +1,202 @@
+body, ::placeholder, input, button {
+  font-family: var(--first-font);
+  font-weight: 700;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--light-grayish-cyan);
+}
+
+.logo {
+  margin: 50px 0px 40px 0px;
+}
+
+.tip-calculator {
+  background: var(--white);
+  border-radius: 30px;
+  padding: 40px;
+  width: calc(100% - 80px);
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--dark-grayish-cyan);
+}
+
+.input {
+  background: var(--very-light-grayish-cyan);
+  border: none;
+  padding: 5px 15px;
+  text-align: right;
+  border-radius: 8px;
+  width: calc(100% - 51px);
+  font-size: 24px;
+  color: var(--very-dark-cyan);
+  outline: none;
+}
+
+.input-container {
+  margin-bottom: 30px;
+}
+
+
+.tips {
+  background: var(--very-dark-cyan);
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+  color: var(--white);
+  font-size: 24px;
+  border-radius: 5px;
+}
+
+.tips:hover {
+  cursor: pointer;
+}
+
+.tip-custom {
+  color: var(--very-dark-cyan);
+  background: var(--light-grayish-cyan);
+  border-radius: 5px;
+  border: none;
+  padding: 8px 16px;
+  text-align: right;
+  outline: none;
+  width: calc(100% - 32px);
+  font-size: 24px;
+}
+
+.tip-custom::placeholder {
+  color: var(--very-dark-cyan);
+}
+
+.tips-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#bill-input_container {
+  position: relative;
+}
+
+.bill-input {
+  padding-left: 35px;
+}
+
+#input-dollar {
+  position: absolute;
+  top: 45px;
+  left: 15px;
+}
+
+#people-input_container {
+  position: relative;
+}
+
+#input-people {
+  position: absolute;
+  top: 45px;
+  left: 15px;
+}
+
+#people-number {
+  padding-left: 35px;
+}
+
+.result {
+  background: var(--very-dark-cyan);
+  border-radius: 15px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.text-type {
+  color: var(--white);
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.person {
+  color: var(--grayish-cyan);
+  font-size: 14px;
+}
+
+.text-value {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.tip-amount, .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.value {
+  font-size: 28px;
+  color: var(--strong-cyan);
+}
+
+#reset-btn {
+  background: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 22px;
+}
+
+.tips:hover {
+  transition: 0.2s;
+  background: var(--light-strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+#reset-btn:hover {
+  transition: 0.2s;
+  background: var(--light-strong-cyan);
+}
+
+.input:focus, .tip-custom:focus {
+  outline: 2px solid var(--strong-cyan);
+}
+
+
+
+@media (min-width: 768px) {
+  .tip-calculator {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .tip-calculator {
+    width: 60%;
+    flex-direction: row;
+    display: flex;
+    gap: 50px;
+  }
+
+  .result {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
+    width: 60%;
+  }
+
+  .tips-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

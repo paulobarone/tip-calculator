@@ -1,11 +1,13 @@
 :root {
   --first-font: 'Space Mono', sans-serif;
 
-  --strong-cyan: hsl(172, 67%, 45%);
+  --strong-cyan: hsl(172, 78%, 55%);
+  --light-strong-cyan: hsl(173, 61%, 77%);
   --very-dark-cyan: hsl(183, 100%, 15%);
   --dark-grayish-cyan: hsl(186, 14%, 43%);
   --grayish-cyan: hsl(184, 14%, 56%);
   --light-grayish-cyan: hsl(185, 41%, 84%);
   --very-light-grayish-cyan: hsl(189, 41%, 97%);
   --white: hsl(0, 0%, 100%);
+  --red-coral: hsl(14, 49%, 63%);
 }
