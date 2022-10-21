@@ -175,6 +175,10 @@ body {
 
 
 @media (min-width: 768px) {
+  .logo {
+    margin: 100px 0px 90px 0px;
+  }
+
   .tip-calculator {
     width: 60%;
   }
