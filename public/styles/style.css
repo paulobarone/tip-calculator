@@ -45,7 +45,7 @@ body {
 }
 
 
-.tips {
+.tip-btn {
   background: var(--very-dark-cyan);
   padding: 15px 0;
   display: flex;
@@ -157,7 +157,7 @@ body {
   font-size: 22px;
 }
 
-.tips:hover {
+.tip-btn:hover {
   transition: 0.2s;
   background: var(--light-strong-cyan);
   color: var(--very-dark-cyan);
@@ -168,10 +168,9 @@ body {
   background: var(--light-strong-cyan);
 }
 
-.input:focus, .tip-custom:focus {
+.input:focus, .tip-custom:focus, .input-selected {
   outline: 2px solid var(--strong-cyan);
 }
-
 
 
 @media (min-width: 768px) {
@@ -203,4 +202,13 @@ body {
   .tips-container {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+.selected {
+  background: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.tip-custom:invalid {
+  outline: 3px solid var(--red-coral);
 }
