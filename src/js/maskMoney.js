@@ -3,4 +3,9 @@ jQuery(function() {
     thousands:'.', 
     decimal:','
   })
+
+  jQuery(".inputPercentage").maskMoney({
+    thousands:'.', 
+    decimal:','
+  })
 });

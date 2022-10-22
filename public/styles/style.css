@@ -3,6 +3,10 @@ body, ::placeholder, input, button {
   font-weight: 700;
 }
 
+::placeholder {
+  color: var(--very-dark-cyan);
+}
+
 body {
   display: flex;
   flex-direction: column;
