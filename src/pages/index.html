@@ -17,13 +17,21 @@
   <div class="tip-calculator">
     <div class="data">
       <div class="input-container" id="bill-input_container">
-        <label for="bill" class="input-label">Bill</label>
-        <label for="bill" id="input-dollar" class="icon-input"><img src="../../public/img/icon-dollar.svg" alt="Icon Dollar"></label>
-        <input type="text" id="bill" class="input inputMoney bill-input" placeholder="0">
+        <div class="labels-container">
+          <label for="bill" class="input-label">Bill <span class="info">*</span></label>
+          <span class="bill-error error"></span>
+        </div>
+        <div for="bill" id="input-dollar" class="label-input-container">
+          <input type="text" id="bill" class="input inputMoney bill-input" placeholder="0">
+          <label for="bill" class="icon-input-label"><img src="../../public/img/icon-dollar.svg" alt="Icon Dollar" class="icon-input"></label>
+        </div>
       </div>
 
       <div class="input-container">
-        <label for="#" class="input-label">Select Tip %</label>
+        <div class="labels-container">
+          <label for="#" class="input-label">Select Tip % <span class="info">*</span></label>
+          <span class="tip-error error"></span>
+        </div>
         <div class="tips-container">
           <div class="tips tip-5 tip-btn">5%</div>
           <div class="tips tip-10 tip-btn">10%</div>
@@ -35,9 +43,14 @@
       </div>
 
       <div class="input-container" id="people-input_container">
-        <label for="people-number" class="input-label">Number of People</label>
-        <label for="people-number" id="input-people" class="icon-input"><img src="../../public/img/icon-person.svg" alt="People icon"></label>
-        <input type="text" id="people-number" class="input people-number-input" placeholder="0">
+        <div class="labels-container">
+          <label for="people-number" class="input-label">Number of People <span class="info">*</span></label>
+          <span class="people-error error">The field cannot be empty</span>
+        </div>
+        <div class="label-input-container">
+          <input type="text" id="people-number" class="input people-number-input" placeholder="0">
+          <label for="people-number" class="icon-input-label"><img src="../../public/img/icon-person.svg" class="icon-input" alt="People icon"></label>
+        </div>
       </div>
     </div>
     <div class="result">

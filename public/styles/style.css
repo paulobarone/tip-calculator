@@ -24,7 +24,7 @@ body {
 
 .input-label {
   display: block;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   color: var(--dark-grayish-cyan);
 }
 
@@ -55,7 +55,7 @@ body {
   border-radius: 5px;
 }
 
-.tips:hover {
+.tip-btn:hover {
   cursor: pointer;
 }
 
@@ -71,42 +71,44 @@ body {
   font-size: 24px;
 }
 
+.icon-input {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.input-label {
+  position: relative;
+}
+
+.info {
+  font-size: 16px;
+  bottom: 5px;
+  position: absolute;
+  color: var(--red-coral);
+}
+
 .tip-custom::placeholder {
   color: var(--very-dark-cyan);
 }
 
 .tips-container {
+  margin-top: 10px;
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(2, 1fr);
 }
 
-#bill-input_container {
+.label-input-container {
   position: relative;
-}
-
-.bill-input {
-  padding-left: 35px;
-}
-
-#input-dollar {
-  position: absolute;
-  top: 45px;
-  left: 15px;
-}
-
-#people-input_container {
-  position: relative;
-}
-
-#input-people {
-  position: absolute;
-  top: 45px;
-  left: 15px;
 }
 
 #people-number {
-  padding-left: 35px;
+  position: relative;
+}
+
+.bill-input, .people-number-input {
+  padding-left: 40px;
 }
 
 .result {
@@ -172,6 +174,30 @@ body {
   outline: 2px solid var(--strong-cyan);
 }
 
+.selected {
+  background: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.tip-custom:invalid {
+  outline: 3px solid var(--red-coral);
+}
+
+.labels-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.error {
+  display: none;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: var(--red-coral);
+  padding-bottom: 5px;
+}
+
 
 @media (min-width: 768px) {
   .logo {
@@ -180,6 +206,11 @@ body {
 
   .tip-calculator {
     width: 60%;
+  }
+
+  .labels-container {
+    flex-direction: row;
+    align-items: center;
   }
 }
 
@@ -202,13 +233,4 @@ body {
   .tips-container {
     grid-template-columns: repeat(3, 1fr);
   }
-}
-
-.selected {
-  background: var(--strong-cyan);
-  color: var(--very-dark-cyan);
-}
-
-.tip-custom:invalid {
-  outline: 3px solid var(--red-coral);
 }
