@@ -32,6 +32,7 @@ function checkTip(e) {
 tipCustom.addEventListener('blur', () => {
   if (tipCustom.value.length >= 1 && tipCustom.value.slice(-1) != '%') tipCustom.value += '%';
   if (tipCustom.value.length >= 1) tipCustom.classList.add('input-selected');
+  if(tipsContainer.querySelector('.selected') || tipsContainer.querySelector('.input-selected')) removeError(tipErrorSpan)
   if(!tipsContainer.querySelector('.selected') && !tipsContainer.querySelector('.input-selected')) applyError(tipErrorSpan, 'You must select an option');
 })
 
@@ -44,3 +45,14 @@ function removeError(tag) {
   tag.style.display = "none"
   tag.innerHTML = ''
 }
+
+billInput.addEventListener('blur', () => {
+  if((billInput.value !== '0,00') ? removeError(billErrorSpan) : applyError(billErrorSpan, 'The field cannot be empty'));
+});
+
+const onlyNumbers = new RegExp('^[0-9]+$')
+numberPeople.addEventListener('blur', () => {
+  if((!onlyNumbers.test(numberPeople.value)) ? applyError(peopleErrorSpan, 'regecx') : removeError(peopleErrorSpan));
+  if((numberPeople.value == 0) ? applyError(peopleErrorSpan, `Can't be zero`) : removeError(peopleErrorSpan));
+  if((!numberPeople.value) ? applyError(peopleErrorSpan, 'The field cannot be empty') : removeError(peopleErrorSpan));
+})
