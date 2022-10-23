@@ -1,8 +1,6 @@
 <h1 align="center">
   Calculadora de gorjetas
 </h1>
-No momento, a calculadora está em desenvolvimento.
-
 Essa calculadora de gorjetas tem como objetivo testar meus conhecimentos de HTML & CSS e JavaScript.
 O desafio foi proposto pelo FrontEnd Mentor, através <a href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX">deste link</a> você poderá saber mais sobre o desafio.
 
