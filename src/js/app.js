@@ -5,9 +5,11 @@ const numberPeople = document.querySelector('.people-number-input');
 
 const tipsContainer = document.querySelector('.tips-container');
 
+const allErrorSpan = document.querySelectorAll('.error')
 const billErrorSpan = document.querySelector('.bill-error');
 const tipErrorSpan = document.querySelector('.tip-error');
 const peopleErrorSpan = document.querySelector('.people-error');
+const form = document.querySelector('.data');
 
 applyError(billErrorSpan, 'The field cannot be empty');
 applyError(tipErrorSpan, 'You must select an option');
@@ -27,6 +29,7 @@ function checkTip(e) {
       if(tipsContainer.querySelector('.selected') || tipsContainer.querySelector('.input-selected')) removeError(tipErrorSpan);
     };
   });
+  searchTip()
 };
 
 tipCustom.addEventListener('blur', () => {
@@ -53,10 +56,6 @@ billInput.addEventListener('blur', () => {
   if((billInput.value !== '0,00') ? removeError(billErrorSpan) : applyError(billErrorSpan, 'The field cannot be empty'));
 });
 
-billInput.addEventListener('blur', () => {
-  console.log(billInput.value.replaceAll('.', '').replaceAll(',', '.').replaceAll('%', ''));
-});
-
 const onlyNumbers = new RegExp('^[0-9]+$');
 numberPeople.addEventListener('blur', () => {
   if(numberPeople.value.length <= 0) {
@@ -69,3 +68,17 @@ numberPeople.addEventListener('blur', () => {
     removeError(peopleErrorSpan)
   }
 })
+
+function searchTip() {
+  if(tipsContainer.querySelector('.selected')) {
+    return tipsContainer.querySelector('.selected').innerHTML;
+  } else {
+    tipCustom.addEventListener('blur', () => {
+      return tipCustom.value;
+    })
+  }
+}
+
+// let billValue = Number(billInput.value.replaceAll('.', '').replaceAll(',', '.').replaceAll('%', ''));
+// let tipValue = Number(searchTip().replaceAll('.', '').replaceAll(',', '.').replaceAll('%', ''));
+// let peopleValue = numberPeople.value;
