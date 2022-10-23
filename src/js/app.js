@@ -10,6 +10,8 @@ const billErrorSpan = document.querySelector('.bill-error');
 const tipErrorSpan = document.querySelector('.tip-error');
 const peopleErrorSpan = document.querySelector('.people-error');
 const form = document.querySelector('.data');
+const tipAmount = document.querySelector('#tip-amount');
+const total = document.querySelector('#total');
 
 applyError(billErrorSpan, 'The field cannot be empty');
 applyError(tipErrorSpan, 'You must select an option');
@@ -27,12 +29,13 @@ function checkTip(e) {
     if(e.target.innerHTML == tip.innerHTML) {
       if(!e.target.classList.contains('tips-input_container')) e.target.classList.add('selected');
       if(tipsContainer.querySelector('.selected') || tipsContainer.querySelector('.input-selected')) removeError(tipErrorSpan);
+      calculate()
     };
   });
-  searchTip()
 };
 
 tipCustom.addEventListener('blur', () => {
+  calculate()
   if (tipCustom.value.length >= 1 && tipCustom.value.slice(-1) != '%') tipCustom.value += '%';
   if (tipCustom.value.length >= 1) {
     if((tipCustom.value == '0,00%') ? applyError(tipErrorSpan, `Can't be zero`) : tipCustom.classList.add('input-selected'));
@@ -54,6 +57,7 @@ function removeError(tag) {
 
 billInput.addEventListener('blur', () => {
   if((billInput.value !== '0,00') ? removeError(billErrorSpan) : applyError(billErrorSpan, 'The field cannot be empty'));
+  calculate()
 });
 
 const onlyNumbers = new RegExp('^[0-9]+$');
@@ -67,18 +71,32 @@ numberPeople.addEventListener('blur', () => {
   } else {
     removeError(peopleErrorSpan)
   }
+  calculate()
 })
 
 function searchTip() {
   if(tipsContainer.querySelector('.selected')) {
     return tipsContainer.querySelector('.selected').innerHTML;
   } else {
-    tipCustom.addEventListener('blur', () => {
-      return tipCustom.value;
-    })
-  }
+      return tipCustom.value
+    }
 }
 
-// let billValue = Number(billInput.value.replaceAll('.', '').replaceAll(',', '.').replaceAll('%', ''));
-// let tipValue = Number(searchTip().replaceAll('.', '').replaceAll(',', '.').replaceAll('%', ''));
-// let peopleValue = numberPeople.value;
+function calculate() {
+  if(billErrorSpan.innerHTML || tipErrorSpan.innerHTML || peopleErrorSpan.innerHTML) return resetResult();
+
+  let billValue = Number(billInput.value.replaceAll('.', '').replaceAll(',', '.').replaceAll('%', ''));
+  let tipValue = Number(searchTip().replaceAll('.', '').replaceAll(',', '.').replaceAll('%', ''));
+  let peopleValue = Number(numberPeople.value);
+
+  const totalValue = (((tipValue * billValue) / 100) / peopleValue).toFixed(2);
+  const tipAmountValue = ((tipValue * billValue) / 100).toFixed(2);
+  
+  tipAmount.innerHTML = `$${tipAmountValue}`
+  total.innerHTML = `$${totalValue}`
+}
+
+function resetResult() {
+  tipAmount.innerHTML = `$0.00`
+  total.innerHTML = `$0.00`
+}
